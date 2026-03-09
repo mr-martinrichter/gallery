@@ -228,7 +228,7 @@ activeNav: "dila"
   <aside class="sidebar">
     <h1>
       <span class="artist-name">{{ site.title }}</span><br>
-      <span class="main-title">MASTERS<br>IN ALL SORTS<br>OF ART</span>
+      <span class="main-title">{{ site.heading | replace("\n", "<br>") | safe }}</span>
     </h1>
 
     <div class="filter-group">
@@ -237,13 +237,7 @@ activeNav: "dila"
       {% endfor %}
     </div>
 
-    <p class="bio">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra
-      nisi at libero tincidunt, ac fermentum arcu viverra. Sed euismod justo vel
-      felis gravida, non scelerisque magna condimentum. Pellentesque habitant
-      morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-      Quisque in eros at neque commodo ultricies eget at nisi.
-    </p>
+    <p class="bio">{{ site.sidebar_bio }}</p>
 
     <a class="sidebar-instagram" href="{{ site.instagram }}" target="_blank">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">

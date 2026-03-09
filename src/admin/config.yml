@@ -14,6 +14,8 @@ collections:
         file: "src/_data/site.json"
         fields:
           - { name: "title", label: "Nazev webu", widget: "string" }
+          - { name: "heading", label: "Nadpis na homepage", widget: "text" }
+          - { name: "sidebar_bio", label: "Bio text na homepage", widget: "text" }
           - { name: "logo", label: "Logo", widget: "image" }
           - { name: "instagram", label: "Instagram URL", widget: "string" }
 
