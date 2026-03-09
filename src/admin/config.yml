@@ -2,35 +2,30 @@ backend:
   name: git-gateway
   branch: main
 
-locale: cs
-
 media_folder: "src/images"
 public_folder: "/images"
 
 collections:
   - name: "settings"
-    label: "Nastavení"
-    delete: false
-    editor:
-      preview: false
+    label: "Nastaveni"
     files:
       - name: "site"
-        label: "Hlavní nastavení"
+        label: "Hlavni nastaveni"
         file: "src/_data/site.json"
         fields:
-          - { name: "title", label: "Název webu", widget: "string" }
+          - { name: "title", label: "Nazev webu", widget: "string" }
           - { name: "logo", label: "Logo", widget: "image" }
           - { name: "instagram", label: "Instagram URL", widget: "string" }
 
       - name: "about"
-        label: "O mně"
+        label: "O mne"
         file: "src/_data/about.json"
         fields:
-          - { name: "name_first", label: "Jméno", widget: "string" }
-          - { name: "name_last", label: "Příjmení", widget: "string" }
+          - { name: "name_first", label: "Jmeno", widget: "string" }
+          - { name: "name_last", label: "Prijmeni", widget: "string" }
           - { name: "photo", label: "Fotografie", widget: "image", required: false }
           - name: "tags"
-            label: "Štítky"
+            label: "Stitky"
             widget: "list"
             fields:
               - { name: "label", label: "Text", widget: "string" }
@@ -38,11 +33,11 @@ collections:
                 label: "Barva"
                 widget: "select"
                 options:
-                  - { label: "Červená", value: "red" }
-                  - { label: "Modrá", value: "blue" }
-                  - { label: "Zelená", value: "green" }
-          - { name: "bio_main", label: "Bio (hlavní)", widget: "text" }
-          - { name: "bio_detail", label: "Bio (detail)", widget: "text" }
+                  - { label: "Cervena", value: "red" }
+                  - { label: "Modra", value: "blue" }
+                  - { label: "Zelena", value: "green" }
+          - { name: "bio_main", label: "Bio hlavni", widget: "text" }
+          - { name: "bio_detail", label: "Bio detail", widget: "text" }
           - { name: "email", label: "E-mail", widget: "string" }
 
       - name: "gallery"
@@ -50,11 +45,11 @@ collections:
         file: "src/_data/gallery.json"
         fields:
           - name: "items"
-            label: "Díla"
+            label: "Dila"
             widget: "list"
             fields:
-              - { name: "image", label: "Obrázek", widget: "image" }
-              - { name: "label", label: "Název", widget: "string" }
+              - { name: "image", label: "Obrazek", widget: "image" }
+              - { name: "label", label: "Nazev", widget: "string" }
               - name: "category"
                 label: "Kategorie"
                 widget: "select"
