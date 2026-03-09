@@ -1,0 +1,10 @@
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="{{ site.logo }}" alt="BRO" class="nav-logo-img" />
+  </a>
+  <div class="nav-right">
+    <a href="/" {% if activeNav == "dila" %}class="nav-active"{% endif %}>Díla</a>
+    <a href="/o-mne/" {% if activeNav == "omne" %}class="nav-active"{% endif %}>O mně</a>
+    <a href="/o-mne/" {% if activeNav == "omne" %}class="nav-active"{% endif %}>Kontakt</a>
+  </div>
+</nav>

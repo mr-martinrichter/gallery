@@ -1,0 +1,299 @@
+---
+layout: base.njk
+title: "Matyáš Richter — Díla"
+activeNav: "dila"
+---
+
+<style>
+  /* ── LAYOUT ── */
+  .layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: 380px;
+    flex-shrink: 0;
+    padding: 48px 36px 48px 28px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    border-right: 1px solid #1a1a1a;
+  }
+
+  .sidebar::-webkit-scrollbar { display: none; }
+
+  .artist-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 64px;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0;
+  }
+
+  .main-title {
+    display: block;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1.0;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+  }
+
+  .filter-group { margin-bottom: 20px; }
+
+  .filter-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 7px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-red   { background: #e63946; }
+  .dot-blue  { background: #4a90e2; }
+  .dot-green { background: #2dc97e; }
+
+  .bio {
+    font-size: 10px;
+    line-height: 1.65;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  .sidebar-instagram {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .sidebar-instagram:hover { color: #fff; }
+
+  /* ── CONTENT ── */
+  .content {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+    padding: 28px 28px 40px 28px;
+    scrollbar-width: thin;
+    scrollbar-color: #333 transparent;
+  }
+
+  /* Gallery masonry */
+  .gallery {
+    columns: 4;
+    column-gap: 8px;
+  }
+
+  @media (max-width: 1100px) { .gallery { columns: 3; } }
+  @media (max-width: 700px)  { .gallery { columns: 2; } }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    .layout {
+      flex-direction: column;
+      overflow: visible;
+    }
+    .sidebar {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #1a1a1a;
+      padding: 28px 20px;
+      overflow-y: visible;
+    }
+    .content {
+      overflow-y: visible;
+      padding: 20px;
+    }
+    .artist-name, .main-title { font-size: 48px; }
+  }
+
+  .card {
+    break-inside: avoid;
+    margin-bottom: 8px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.85);
+    z-index: 10;
+  }
+
+  .card-img-wrap {
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+
+  .card:hover img {
+    filter: grayscale(0%);
+  }
+
+  .card-info {
+    padding: 5px 2px 2px;
+  }
+
+  .card-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #ddd;
+  }
+
+  .card-sub {
+    font-size: 8px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── LIGHTBOX ── */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.9);
+    border-radius: 2px;
+  }
+
+  .lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 26px;
+    font-size: 28px;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .lightbox-close:hover { color: #fff; }
+</style>
+
+<!-- ── MAIN LAYOUT ── -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h1>
+      <span class="artist-name">{{ site.title }}</span><br>
+      <span class="main-title">MASTERS<br>IN ALL SORTS<br>OF ART</span>
+    </h1>
+
+    <div class="filter-group">
+      {% for tag in about.tags %}
+      <label class="filter-label"><span class="dot dot-{{ tag.color }}"></span> {{ tag.label }}</label>
+      {% endfor %}
+    </div>
+
+    <p class="bio">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra
+      nisi at libero tincidunt, ac fermentum arcu viverra. Sed euismod justo vel
+      felis gravida, non scelerisque magna condimentum. Pellentesque habitant
+      morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      Quisque in eros at neque commodo ultricies eget at nisi.
+    </p>
+
+    <a class="sidebar-instagram" href="{{ site.instagram }}" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4.5"/>
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+      Instagram
+    </a>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <div class="gallery" id="gallery">
+      {% for item in gallery.items %}
+      <div class="card" onclick="openLightbox('{{ item.image }}', '{{ item.label }}')">
+        <div class="card-img-wrap">
+          <img src="{{ item.image }}" alt="{{ item.label }}" />
+        </div>
+        <div class="card-info">
+          <div class="card-label">{{ item.label }}</div>
+          <div class="card-sub">{{ item.category }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+</div>
+
+<!-- ── LIGHTBOX ── -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+</div>
+
+<script>
+  function openLightbox(src, alt) {
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-img').alt = alt;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>

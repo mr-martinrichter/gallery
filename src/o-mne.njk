@@ -1,0 +1,269 @@
+---
+layout: base.njk
+title: "O mně — Matyáš Richter"
+activeNav: "omne"
+permalink: "/o-mne/"
+---
+
+<style>
+  /* ── LAYOUT ── */
+  .layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* ── LEFT: PHOTO ── */
+  .photo-panel {
+    width: 45%;
+    flex-shrink: 0;
+    position: relative;
+    border-right: 1px solid #1a1a1a;
+    overflow: hidden;
+  }
+
+  .photo-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #2a2a2a;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: #0f0f0f;
+  }
+
+  .photo-placeholder svg {
+    opacity: 0.3;
+  }
+
+  /* ── RIGHT: TEXT ── */
+  .text-panel {
+    flex: 1;
+    overflow-y: auto;
+    padding: 64px 60px 60px 60px;
+    scrollbar-width: thin;
+    scrollbar-color: #333 transparent;
+  }
+
+  .text-panel::-webkit-scrollbar { width: 4px; }
+  .text-panel::-webkit-scrollbar-track { background: transparent; }
+  .text-panel::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+  .about-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  .about-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 64px;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+
+  .about-title {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1.0;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    color: #fff;
+    margin-bottom: 48px;
+  }
+
+  .about-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-red   { background: #e63946; }
+  .dot-blue  { background: #4a90e2; }
+  .dot-green { background: #2dc97e; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #1e1e1e;
+    margin-bottom: 40px;
+  }
+
+  .bio-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #aaa;
+    max-width: 560px;
+    margin-bottom: 40px;
+  }
+
+  .bio-text strong {
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .bio-small {
+    font-size: 11px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 480px;
+    margin-bottom: 48px;
+  }
+
+  .contact-block {
+    margin-top: 8px;
+  }
+
+  .contact-label {
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #444;
+    margin-bottom: 12px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-links a:hover { color: #fff; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    .layout { flex-direction: column; overflow: visible; }
+
+    .photo-panel {
+      width: 100%;
+      height: 60vw;
+      border-right: none;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .text-panel {
+      overflow-y: visible;
+      padding: 36px 20px 48px;
+    }
+
+    .about-name, .about-title { font-size: 44px; }
+  }
+</style>
+
+<!-- ── LAYOUT ── -->
+<div class="layout">
+
+  <!-- FOTO -->
+  <div class="photo-panel">
+    {% if about.photo %}
+    <img src="{{ about.photo }}" alt="{{ about.name_first }} {{ about.name_last }}" />
+    {% else %}
+    <div class="photo-placeholder">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      Foto
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- TEXT -->
+  <div class="text-panel">
+
+    <p class="about-label">O mně</p>
+
+    <p class="about-name">{{ about.name_first }}</p>
+    <p class="about-title">{{ about.name_last }}</p>
+
+    <div class="about-tags">
+      {% for tag in about.tags %}
+      <span class="tag"><span class="dot dot-{{ tag.color }}"></span> {{ tag.label }}</span>
+      {% endfor %}
+    </div>
+
+    <hr class="divider" />
+
+    <p class="bio-text">
+      {{ about.bio_main | safe }}
+    </p>
+
+    <p class="bio-small">
+      {{ about.bio_detail | safe }}
+    </p>
+
+    <div class="contact-block">
+      <p class="contact-label">Kontakt</p>
+      <div class="contact-links">
+        <a href="{{ site.instagram }}" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="mailto:{{ about.email }}">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          {{ about.email }}
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>

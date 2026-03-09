@@ -1,0 +1,66 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: cs
+
+media_folder: "src/images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Nastavení"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "site"
+        label: "Hlavní nastavení"
+        file: "src/_data/site.json"
+        fields:
+          - { name: "title", label: "Název webu", widget: "string" }
+          - { name: "logo", label: "Logo", widget: "image" }
+          - { name: "instagram", label: "Instagram URL", widget: "string" }
+
+      - name: "about"
+        label: "O mně"
+        file: "src/_data/about.json"
+        fields:
+          - { name: "name_first", label: "Jméno", widget: "string" }
+          - { name: "name_last", label: "Příjmení", widget: "string" }
+          - { name: "photo", label: "Fotografie", widget: "image", required: false }
+          - name: "tags"
+            label: "Štítky"
+            widget: "list"
+            fields:
+              - { name: "label", label: "Text", widget: "string" }
+              - name: "color"
+                label: "Barva"
+                widget: "select"
+                options:
+                  - { label: "Červená", value: "red" }
+                  - { label: "Modrá", value: "blue" }
+                  - { label: "Zelená", value: "green" }
+          - { name: "bio_main", label: "Bio (hlavní)", widget: "text" }
+          - { name: "bio_detail", label: "Bio (detail)", widget: "text" }
+          - { name: "email", label: "E-mail", widget: "string" }
+
+      - name: "gallery"
+        label: "Galerie"
+        file: "src/_data/gallery.json"
+        fields:
+          - name: "items"
+            label: "Díla"
+            widget: "list"
+            fields:
+              - { name: "image", label: "Obrázek", widget: "image" }
+              - { name: "label", label: "Název", widget: "string" }
+              - name: "category"
+                label: "Kategorie"
+                widget: "select"
+                options:
+                  - "Painter"
+                  - "Visual Experimentator"
+                  - "Lithographer"
+                  - "Photographer"
+                  - "Stylist"
