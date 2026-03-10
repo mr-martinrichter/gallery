@@ -2,12 +2,21 @@
   "name_first": "Matyáš",
   "name_last": "Richter",
   "tags": [
-    { "label": "Visual Experimentator", "color": "red" },
-    { "label": "Painter", "color": "blue" },
-    { "label": "Lithographer", "color": "green" }
+    {
+      "label": "Visual Experimentator",
+      "color": "red"
+    },
+    {
+      "label": "Painter",
+      "color": "blue"
+    },
+    {
+      "label": "Lithographer",
+      "color": "green"
+    }
   ],
   "bio_main": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra nisi at libero tincidunt, ac fermentum arcu viverra. <strong>Sed euismod justo vel felis gravida</strong>, non scelerisque magna condimentum.",
   "bio_detail": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque in eros at neque commodo ultricies eget at nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.<br /><br />Nulla quis lorem ut libero malesuada feugiat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta.",
   "email": "info@matyasrichter.cz",
-  "photo": ""
+  "photo": "/images/image0-9-.jpeg"
 }
