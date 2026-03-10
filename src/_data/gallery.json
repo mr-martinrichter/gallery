@@ -1,23 +1,99 @@
 {
   "items": [
-    { "image": "/images/Emil+Nolde+web.webp",                                     "label": "Emil Nolde",      "category": "Painter" },
-    { "image": "/images/expressionism-obelisk-art-history.webp",                   "label": "Obelisk",         "category": "Photographer" },
-    { "image": "/images/213a745d72efb43a4e86bbd7031ed83878c114f7-1000x1000.webp",  "label": "Series No. 1",    "category": "Stylist" },
-    { "image": "/images/images.jpeg",                                              "label": "Study in Light",  "category": "Painter" },
-    { "image": "/images/expressionism-obelisk-art-history.webp",                   "label": "Obelisk II",      "category": "Painter" },
-    { "image": "/images/Emil+Nolde+web.webp",                                     "label": "Emil Nolde II",   "category": "Stylist" },
-    { "image": "/images/213a745d72efb43a4e86bbd7031ed83878c114f7-1000x1000.webp",  "label": "Series No. 2",    "category": "Photographer" },
-    { "image": "/images/images.jpeg",                                              "label": "Study in Shadow", "category": "Photographer" },
-    { "image": "/images/expressionism-obelisk-art-history.webp",                   "label": "Obelisk III",     "category": "Painter" },
-    { "image": "/images/Emil+Nolde+web.webp",                                     "label": "Emil Nolde III",  "category": "Painter" },
-    { "image": "/images/213a745d72efb43a4e86bbd7031ed83878c114f7-1000x1000.webp",  "label": "Series No. 3",    "category": "Stylist" },
-    { "image": "/images/images.jpeg",                                              "label": "Study in Form",   "category": "Painter" },
-    { "image": "/images/Emil+Nolde+web.webp",                                     "label": "Emil Nolde IV",   "category": "Stylist" },
-    { "image": "/images/expressionism-obelisk-art-history.webp",                   "label": "Obelisk IV",      "category": "Photographer" },
-    { "image": "/images/213a745d72efb43a4e86bbd7031ed83878c114f7-1000x1000.webp",  "label": "Series No. 4",    "category": "Photographer" },
-    { "image": "/images/images.jpeg",                                              "label": "Study in Colour", "category": "Stylist" },
-    { "image": "/images/Emil+Nolde+web.webp",                                     "label": "Emil Nolde V",    "category": "Painter" },
-    { "image": "/images/expressionism-obelisk-art-history.webp",                   "label": "Obelisk V",       "category": "Painter" },
-    { "image": "/images/213a745d72efb43a4e86bbd7031ed83878c114f7-1000x1000.webp",  "label": "Series No. 5",    "category": "Stylist" }
+    {
+      "image": "/images/image3-8-.jpeg",
+      "label": "Emil Nolde",
+      "category": "Painter"
+    },
+    {
+      "image": "/images/expressionism-obelisk-art-history.webp",
+      "label": "Obelisk",
+      "category": "Photographer"
+    },
+    {
+      "image": "/images/213a745d72efb43a4e86bbd7031ed83878c114f7-1000x1000.webp",
+      "label": "Series No. 1",
+      "category": "Stylist"
+    },
+    {
+      "image": "/images/images.jpeg",
+      "label": "Study in Light",
+      "category": "Painter"
+    },
+    {
+      "image": "/images/expressionism-obelisk-art-history.webp",
+      "label": "Obelisk II",
+      "category": "Painter"
+    },
+    {
+      "image": "/images/Emil+Nolde+web.webp",
+      "label": "Emil Nolde II",
+      "category": "Stylist"
+    },
+    {
+      "image": "/images/213a745d72efb43a4e86bbd7031ed83878c114f7-1000x1000.webp",
+      "label": "Series No. 2",
+      "category": "Photographer"
+    },
+    {
+      "image": "/images/images.jpeg",
+      "label": "Study in Shadow",
+      "category": "Photographer"
+    },
+    {
+      "image": "/images/expressionism-obelisk-art-history.webp",
+      "label": "Obelisk III",
+      "category": "Painter"
+    },
+    {
+      "image": "/images/Emil+Nolde+web.webp",
+      "label": "Emil Nolde III",
+      "category": "Painter"
+    },
+    {
+      "image": "/images/213a745d72efb43a4e86bbd7031ed83878c114f7-1000x1000.webp",
+      "label": "Series No. 3",
+      "category": "Stylist"
+    },
+    {
+      "image": "/images/images.jpeg",
+      "label": "Study in Form",
+      "category": "Painter"
+    },
+    {
+      "image": "/images/Emil+Nolde+web.webp",
+      "label": "Emil Nolde IV",
+      "category": "Stylist"
+    },
+    {
+      "image": "/images/expressionism-obelisk-art-history.webp",
+      "label": "Obelisk IV",
+      "category": "Photographer"
+    },
+    {
+      "image": "/images/213a745d72efb43a4e86bbd7031ed83878c114f7-1000x1000.webp",
+      "label": "Series No. 4",
+      "category": "Photographer"
+    },
+    {
+      "image": "/images/images.jpeg",
+      "label": "Study in Colour",
+      "category": "Stylist"
+    },
+    {
+      "image": "/images/Emil+Nolde+web.webp",
+      "label": "Emil Nolde V",
+      "category": "Painter"
+    },
+    {
+      "image": "/images/expressionism-obelisk-art-history.webp",
+      "label": "Obelisk V",
+      "category": "Painter"
+    },
+    {
+      "image": "/images/213a745d72efb43a4e86bbd7031ed83878c114f7-1000x1000.webp",
+      "label": "Series No. 5",
+      "category": "Stylist"
+    }
   ]
 }
